@@ -1,7 +1,6 @@
 import React, { useState } from "react";
+import '../../styles/home.css';
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 const TrafficLight = () => {
@@ -16,21 +15,21 @@ const TrafficLight = () => {
 
 	return (
 		<>
-			<div className="d-flex flex-column justify-content-center text-center align-items-center vh-100" style={{ backgroundColor: '#2c3e50' }}>
-				<div className="bg-dark p-5 rounded-5" style={{ width: '140px', height: '380px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5)' }}>
+			<div className="d-flex flex-column justify-content-center align-items-center vh-100 bg-secondary">
+				<div className="bg-dark p-5 rounded-5" style={{ width: '140px', height: '380px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5)'}}>
 					<div className="d-flex flex-column justify-content-between align-items-center h-100">
 						<div
-							className={`rounded-circle ${selectedLight === "red" ? "bg-danger" : "bg-secondary"}`}
+							className={`light red ${selectedLight === "red" ? "selected" : ""}`}
 							style={lightStyle}
 							onClick={() => setSelectedLight("red")}
 						></div>
 						<div
-							className={`rounded-circle ${selectedLight === "yellow" ? "bg-warning" : "bg-secondary"}`}
+							className={`light yellow ${selectedLight === "yellow" ? "selected" : ""}`}
 							style={lightStyle}
 							onClick={() => setSelectedLight("yellow")}
 						></div>
 						<div
-							className={`rounded-circle ${selectedLight === "green" ? "bg-success" : "bg-secondary"}`}
+							className={`light green ${selectedLight === "green" ? "selected" : ""}`}
 							style={lightStyle}
 							onClick={() => setSelectedLight("green")}
 						></div>
@@ -49,7 +48,7 @@ const TrafficLight = () => {
 const lightStyle = {
 	width: '80px',
 	height: '80px',
-	boxShadow: '0 4px 15px rgba(0, 0, 0, 0.4)',
+	borderRadius: '50%',
 	transition: 'background-color 0.3s, box-shadow 0.3s'
 };
 
